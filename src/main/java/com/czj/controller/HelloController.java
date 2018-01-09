@@ -26,6 +26,7 @@ public class HelloController {
     
     @RequestMapping("/hello")
     public String hello(){
+
 //        getProxyClass(killer.getClass(),jdkKiller).kill("aaa");
 //        System.out.println(cglibProxyKiller.getClass().getName());
 //        System.out.println(killer.getClass().getName());
