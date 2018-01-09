@@ -8,4 +8,6 @@ import org.springframework.stereotype.Component;
 public interface IKiller {
     void kill(String name);
     void save(String name,String who);
+
+
 }

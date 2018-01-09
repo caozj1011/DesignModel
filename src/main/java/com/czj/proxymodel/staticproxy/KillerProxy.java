@@ -35,6 +35,8 @@ public class KillerProxy implements IKiller{
     @Override
     public void save(String name, String who) {
 
+
+
     }
 
     public static void main(String[] args) {

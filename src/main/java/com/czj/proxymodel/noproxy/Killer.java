@@ -21,7 +21,7 @@ public class Killer implements IKiller{
 
     @Override
     public void save(String name, String who) {
-        System.out.println(name+"救了："+who);
+        System.out.println(name+"救了："+who  );
     }
 
     public static void main(String[] args) {
