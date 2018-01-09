@@ -2,6 +2,7 @@ package com.czj.proxymodel.cglibproxy;
 
 import com.czj.proxymodel.noproxy.IKiller;
 import com.czj.proxymodel.noproxy.Killer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
@@ -13,10 +14,9 @@ import java.lang.reflect.Method;
 /**
  * Created by caozhiia on 2018/1/9.
  */
+@Slf4j
 @Component
 public class CglibProxyKiller implements MethodInterceptor{
-    @Autowired
-    private Killer Killer;
 
     public <T> T getProxy(Class<T> cls){
         return (T) Enhancer.create(cls,this);
@@ -24,8 +24,13 @@ public class CglibProxyKiller implements MethodInterceptor{
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        Object result = methodProxy.invokeSuper(o, objects);
+        log.info("args:"+methodProxy.getSuperName()+"==============");
 
+        for (Object o1:objects) {
+             String logs = (String)o1;
+            log.info("=================>"+logs);
+        }
+        Object result = methodProxy.invokeSuper(o, objects);
         return result;
     }
 }

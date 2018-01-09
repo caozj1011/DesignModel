@@ -15,7 +15,7 @@ import java.lang.reflect.Proxy;
  * Created by caozhiia on 2018/1/8.
  */
 @RestController
-public class HelloController {
+public class ProxyController {
     @Autowired
     private CglibProxyKiller cglibProxyKiller;
 
@@ -25,9 +25,8 @@ public class HelloController {
 
 
     
-    @RequestMapping("/hello")
-    public String hello(){
-
+    @RequestMapping("/proxy")
+    public String proxy(){
 //        getProxyClass(killer.getClass(),jdkKiller).kill("aaa");
 //        System.out.println(cglibProxyKiller.getClass().getName());
 //        System.out.println(killer.getClass().getName());
