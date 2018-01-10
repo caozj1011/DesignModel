@@ -11,6 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Component
 public class ArgsWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new ArgsInterceptor());
+        //registry.addInterceptor(new ArgsInterceptor());
     }
 }
